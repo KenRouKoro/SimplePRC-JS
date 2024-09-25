@@ -1,12 +1,12 @@
 import {WebSocket,MessageEvent} from 'ws';
-import { BSON, EJSON, ObjectId } from 'bson';
+import { BSON } from 'bson';
 import {APIResponse, RPCNode, RPCServer, TimedCache} from "./type";
 
 export class simple_rpc_client {
     private websocket_client: WebSocket;
     private status: boolean = false;
     private root: RPCNode = new RPCNode();
-    private server_cache: TimedCache<string, RPCServer>;
+    private readonly server_cache: TimedCache<string, RPCServer>;
     private bin_first:boolean;
 
     get _server_cache(){
@@ -144,7 +144,7 @@ export class simple_rpc_client {
     public send(message:APIResponse,useBin:boolean=this.bin_first):void{
         if (this.websocket_client.OPEN){
             if (useBin){
-
+                this.websocket_client.send(message.toBsonBin());
             }else{
                 this.websocket_client.send(message.toJsonStr());
             }
