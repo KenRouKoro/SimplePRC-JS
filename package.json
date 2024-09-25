@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Simple front-end and back-end RPC library, based on WebSocket+JSON/BSON.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
-    "axios": "^1.7.7",
     "bson": "^6.8.0",
     "ws": "^8.18.0"
   },
@@ -17,5 +17,6 @@
   },
   "private": true,
   "author": "KenRouKoro",
-  "license": "LGPL-3.0-or-later"
+  "license": "LGPL-3.0-or-later",
+  "files": ["dist","src"]
 }
