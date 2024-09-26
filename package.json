@@ -1,6 +1,6 @@
 {
   "name": "simple-rpc-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple front-end and back-end RPC library, based on WebSocket+JSON/BSON.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "@types/ws": "^8.5.12",
     "typescript": "^5.5.3"
   },
-  "private": true,
+  "private": false,
   "author": "KenRouKoro",
   "license": "LGPL-3.0-or-later",
   "files": ["dist","src"]

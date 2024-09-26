@@ -128,6 +128,8 @@ export class simple_rpc_client {
             const key = keys[i];
             if (!node.getChildren().has(key)) {
                 console.error(`SimpleRPC: No such node ${data.key}`);
+                const notFountRe = new APIResponse(data.UUID,404,'No matching APIs found');
+                this.send(notFountRe);
                 return;
             }
             node = node.getChildren().get(key)!;
